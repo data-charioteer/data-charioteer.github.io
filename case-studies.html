@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>jas. /case-studies</title>
-<meta name="description" content="case studies — ml and data projects, written up properly.">
+<title>Ishank Sharma — Case Studies</title>
+<meta name="description" content="Case studies in SQL, Python, and Power BI — freelance pricing, telecom networks, and EV adoption analysis.">
 <style>
   :root{
     --paper:#F7F5F0;
@@ -146,77 +146,48 @@
 
   <div class="filterbar" aria-hidden="true">
     <span class="active">all</span>
-    <span>ml</span>
-    <span>data eng</span>
-    <span>research</span>
+    <span>sql</span>
+    <span>python</span>
+    <span>power bi</span>
   </div>
 
   <div class="study" id="cs-1">
-    <div class="study-meta"><span class="num">01</span><span>placeholder · ML</span><span>placeholder timeframe</span></div>
-    <h2>Title of project one — replace me</h2>
-    <p><b style="color:var(--ink)">the problem:</b> placeholder — what was broken, slow, or missing before this existed.</p>
-    <p><b style="color:var(--ink)">what i built:</b> placeholder — the approach, the model, the pipeline, in plain language.</p>
+    <div class="study-meta"><span class="num">01</span><span>SQL · Power BI</span><span>Personal project</span></div>
+    <h2>Freelance Skill Demand &amp; Pricing Analysis</h2>
+    <p><b style="color:var(--ink)">the problem:</b> a raw freelance job postings dataset, messy currency symbols, inconsistent experience-level labels, and no clear read on which skills actually pay or where demand is concentrated.</p>
+    <p><b style="color:var(--ink)">what i built:</b> cleaned and transformed the dataset in SQL, stripping currency symbols, casting types, and standardizing categorical fields. Used CTEs, window functions, and CASE WHEN bucketing to analyze pricing tiers and skill demand, then built an interactive Power BI dashboard with KPIs, slicers, and drill-through filters.</p>
     <div class="stack">
-      <span>PyTorch</span><span>placeholder</span><span>placeholder</span>
+      <span>SQL</span><span>CTEs</span><span>Window Functions</span><span>Power BI</span>
     </div>
     <div class="result-box">
-      <b>result:</b> placeholder metric — e.g. "cut inference latency from Xms to Yms" or "improved F1 from 0.X to 0.Y on Z dataset"
+      <b>result:</b> found that intermediate-level roles dominate postings, CRM and business skills command higher rates than expected, and job volume is concentrated in a small number of countries.
     </div>
     <div class="study-links">
-      <a href="#" target="_blank" rel="noopener">read full case study →</a>
-      <a href="#" target="_blank" rel="noopener">github →</a>
+      <a href="https://github.com/data-charioteer" target="_blank" rel="noopener">github →</a>
     </div>
   </div>
 
   <div class="study" id="cs-2">
-    <div class="study-meta"><span class="num">02</span><span>placeholder · Data Eng</span><span>placeholder timeframe</span></div>
-    <h2>Title of project two — replace me</h2>
-    <p><b style="color:var(--ink)">the problem:</b> placeholder.</p>
-    <p><b style="color:var(--ink)">what i built:</b> placeholder.</p>
-    <div class="stack"><span>placeholder</span><span>placeholder</span></div>
-    <div class="result-box"><b>result:</b> placeholder metric.</div>
+    <div class="study-meta"><span class="num">02</span><span>Python · Pandas</span><span>Personal project</span></div>
+    <h2>Telecom Network Usage Analysis (Milan CDR Dataset)</h2>
+    <p><b style="color:var(--ink)">the problem:</b> ~15 million call detail records from the Telecom Italia Big Data Challenge, with missing values, inconsistent timestamps, and no aggregated view of where and when the network was under strain.</p>
+    <p><b style="color:var(--ink)">what i built:</b> processed the full dataset using Python (Pandas, NumPy), handling missing values, timestamp conversion, and aggregation at scale. Ran time-series and cell-tower load analysis to surface peak traffic windows and congestion-prone towers, then visualized hourly and daily patterns with Matplotlib and Seaborn heatmaps.</p>
+    <div class="stack"><span>Python</span><span>Pandas</span><span>NumPy</span><span>Seaborn</span></div>
+    <div class="result-box"><b>result:</b> identified evening hours as the highest-usage window and a small subset of towers carrying disproportionate load — plus a strong correlation between call, SMS, and internet usage relevant to capacity planning.</div>
     <div class="study-links">
-      <a href="#" target="_blank" rel="noopener">read full case study →</a>
-      <a href="#" target="_blank" rel="noopener">github →</a>
+      <a href="https://github.com/data-charioteer" target="_blank" rel="noopener">github →</a>
     </div>
   </div>
 
   <div class="study" id="cs-3">
-    <div class="study-meta"><span class="num">03</span><span>placeholder · Research</span><span>placeholder timeframe</span></div>
-    <h2>Title of project three — replace me</h2>
-    <p><b style="color:var(--ink)">the problem:</b> placeholder.</p>
-    <p><b style="color:var(--ink)">what i built:</b> placeholder.</p>
-    <div class="stack"><span>placeholder</span><span>placeholder</span></div>
-    <div class="result-box"><b>result:</b> placeholder metric.</div>
+    <div class="study-meta"><span class="num">03</span><span>SQL · Python</span><span>Personal project</span></div>
+    <h2>EV &amp; E-Rickshaw Adoption Trends Analysis (India)</h2>
+    <p><b style="color:var(--ink)">the problem:</b> ten years (2015–2025) of national EV sales data sourced from Kaggle, spanning vehicle categories and segments, with no clear story yet on what's actually driving adoption.</p>
+    <p><b style="color:var(--ink)">what i built:</b> cleaned the dataset in SQL and ran year-on-year growth and EV penetration trend analysis in Python, then built category-wise sales comparison charts to communicate adoption momentum to a non-technical audience.</p>
+    <div class="stack"><span>SQL</span><span>Python</span><span>Matplotlib</span><span>Seaborn</span></div>
+    <div class="result-box"><b>result:</b> consistent multi-year growth in EV adoption, driven primarily by 2-wheelers and 3-wheelers rather than passenger cars.</div>
     <div class="study-links">
-      <a href="#" target="_blank" rel="noopener">read full case study →</a>
-      <a href="#" target="_blank" rel="noopener">github →</a>
-    </div>
-  </div>
-
-  <div class="study" id="cs-4">
-    <div class="study-meta"><span class="num">04</span><span>placeholder</span><span>placeholder timeframe</span></div>
-    <h2>Title of project four — replace me</h2>
-    <p><b style="color:var(--ink)">the problem:</b> placeholder.</p>
-    <p><b style="color:var(--ink)">what i built:</b> placeholder.</p>
-    <div class="stack"><span>placeholder</span><span>placeholder</span></div>
-    <div class="result-box"><b>result:</b> placeholder metric.</div>
-    <div class="study-links">
-      <a href="#" target="_blank" rel="noopener">read full case study →</a>
-      <a href="#" target="_blank" rel="noopener">github →</a>
-    </div>
-  </div>
-
-  <div class="study" id="cs-5">
-    <div class="study-meta"><span class="num">05</span><span>placeholder</span><span>placeholder timeframe</span></div>
-    <h2>Title of project five — replace me</h2>
-    <p><b style="color:var(--ink)">the problem:</b> placeholder.</p>
-    <p><b style="color:var(--ink)">what i built:</b> placeholder.</p>
-    <div class="stack"><span>placeholder</span><span>placeholder</span></div>
-    <div class="result-box"><b>result:</b> placeholder metric.</div>
-    <div class="study-links">
-      <a href="#" target="_blank" rel="noopener">read full case study →</a>
-      <a href="#" target="_blank" rel="noopener">github →</a>
+      <a href="https://github.com/data-charioteer" target="_blank" rel="noopener">github →</a>
     </div>
   </div>
 
