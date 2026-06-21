@@ -59,23 +59,13 @@
     gap:14px;
     margin-bottom:8px;
   }
-  .cursor-box{
-    width:34px;
-    height:34px;
+  .profile-img{
+    width:56px;
+    height:56px;
+    border-radius:50%;
+    object-fit:cover;
     border:1px solid var(--ink);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-family:inherit;
-    font-size:16px;
     flex-shrink:0;
-  }
-  .cursor{
-    animation: blink 1.1s steps(1) infinite;
-  }
-  @keyframes blink{
-    0%,49%{opacity:1;}
-    50%,100%{opacity:0;}
   }
   h1{
     font-family:'Georgia','Times New Roman',serif;
@@ -105,10 +95,6 @@
   .stamp b{color:var(--ink); font-weight:600;}
   p{margin:0 0 18px;}
   .bio-line{margin:0 0 10px;}
-  .prompt{
-    color:var(--lab);
-    margin-right:8px;
-  }
   blockquote{
     border-left:2px solid var(--lab);
     margin:24px 0;
@@ -236,7 +222,7 @@
 
   <header>
     <div class="logo-row">
-      <div class="cursor-box" aria-hidden="true">_<span class="cursor">|</span></div>
+      <img class="profile-img" src="images/profile.png" alt="Ishank Sharma" />
       <div>
         <h1>Ishank<span class="heart">.</span>Sharma</h1>
         <p class="tagline">Data Analyst — SQL, Python, and dashboards that find the real story</p>
@@ -251,9 +237,9 @@
   </div>
 
   <section aria-label="About">
-    <p class="bio-line"><span class="prompt">$</span> Data Analyst with an MCA (CGPA 9.61) and a B.Sc. in Mathematics — I turn messy datasets into dashboards people actually use</p>
-    <p class="bio-line"><span class="prompt">$</span> currently a Dashboard Developer Intern at ZeTheta Algorithms, cleaning data and building reports for internal business review</p>
-    <p class="bio-line"><span class="prompt">$</span> comfortable across SQL, Python (Pandas/NumPy), and Power BI — from raw CSVs to a dashboard with KPIs and drill-throughs</p>
+    <p class="bio-line">Data Analyst with an MCA (CGPA 9.61) and a B.Sc. in Mathematics — I turn messy datasets into dashboards people actually use</p>
+    <p class="bio-line">currently a Dashboard Developer Intern at ZeTheta Algorithms, cleaning data and building reports for internal business review</p>
+    <p class="bio-line">comfortable across SQL, Python (Pandas/NumPy), and Power BI — from raw CSVs to a dashboard with KPIs and drill-throughs</p>
 
     <blockquote>
       good analysis isn't a pretty chart, it's a decision someone can actually make from it
