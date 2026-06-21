@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jas. /home</title>
+<meta name="description" content="ml + data. notes, case studies, and things i broke and fixed.">
+<style>
+  :root{
+    --paper:#F7F5F0;
+    --ink:#161412;
+    --ink-soft:#4a463f;
+    --rule:#d8d3c6;
+    --lab:#2B5D3F;
+    --hate:#8B2E2E;
+    --measure:640px;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-font-smoothing:antialiased;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'JetBrains Mono','SF Mono',Consolas,monospace;
+    font-size:15px;
+    line-height:1.65;
+    padding:64px 24px 120px;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:.001ms !important; transition-duration:.001ms !important;}
+  }
+  .wrap{
+    max-width:var(--measure);
+    margin:0 auto;
+  }
+  .topnav{
+    display:flex;
+    gap:18px;
+    margin-bottom:56px;
+    font-size:13px;
+  }
+  .topnav a{
+    color:var(--ink-soft);
+    text-decoration:none;
+    border-bottom:1px dashed var(--rule);
+    padding-bottom:2px;
+  }
+  .topnav a:hover, .topnav a:focus-visible{
+    color:var(--lab);
+    border-bottom-color:var(--lab);
+  }
+  .topnav a[aria-current="page"]{
+    color:var(--ink);
+    border-bottom:1px solid var(--ink);
+  }
+  .logo-row{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:8px;
+  }
+  .cursor-box{
+    width:34px;
+    height:34px;
+    border:1px solid var(--ink);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:inherit;
+    font-size:16px;
+    flex-shrink:0;
+  }
+  .cursor{
+    animation: blink 1.1s steps(1) infinite;
+  }
+  @keyframes blink{
+    0%,49%{opacity:1;}
+    50%,100%{opacity:0;}
+  }
+  h1{
+    font-family:'Georgia','Times New Roman',serif;
+    font-style:italic;
+    font-weight:700;
+    font-size:30px;
+    letter-spacing:-0.01em;
+    margin:0;
+  }
+  h1 .heart{
+    color:var(--hate);
+    font-style:normal;
+  }
+  .tagline{
+    color:var(--ink-soft);
+    font-size:13px;
+    margin:4px 0 0;
+  }
+  .stamp{
+    margin:40px 0 36px;
+    padding:14px 16px;
+    border:1px solid var(--rule);
+    background:repeating-linear-gradient(135deg, rgba(43,93,63,0.04) 0 2px, transparent 2px 8px);
+    font-size:13px;
+    color:var(--ink-soft);
+  }
+  .stamp b{color:var(--ink); font-weight:600;}
+  p{margin:0 0 18px;}
+  .bio-line{margin:0 0 10px;}
+  .prompt{
+    color:var(--lab);
+    margin-right:8px;
+  }
+  blockquote{
+    border-left:2px solid var(--lab);
+    margin:24px 0;
+    padding:2px 0 2px 16px;
+    color:var(--ink-soft);
+    font-style:italic;
+  }
+  .listen{
+    display:inline-block;
+    margin:8px 0 28px;
+    color:var(--ink);
+    text-decoration:none;
+    border-bottom:1px solid var(--ink);
+  }
+  .listen:hover, .listen:focus-visible{color:var(--lab); border-color:var(--lab);}
+  h2.section-label{
+    font-family:inherit;
+    font-size:12px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin:40px 0 14px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  h2.section-label::after{
+    content:'';
+    flex:1;
+    height:1px;
+    background:var(--rule);
+  }
+  .taglist{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:8px;
+  }
+  .tag{
+    border:1px solid var(--rule);
+    padding:4px 10px;
+    font-size:12.5px;
+    border-radius:2px;
+    color:var(--ink-soft);
+  }
+  .tag.lab{border-color:var(--lab); color:var(--lab);}
+  .tag.hate{
+    border-color:var(--hate);
+    color:var(--hate);
+    text-decoration:line-through;
+    text-decoration-color:var(--hate);
+  }
+  .card-list{
+    display:flex;
+    flex-direction:column;
+    gap:0;
+  }
+  .card{
+    display:block;
+    padding:16px 4px;
+    border-bottom:1px solid var(--rule);
+    text-decoration:none;
+    color:var(--ink);
+  }
+  .card:first-child{border-top:1px solid var(--rule);}
+  .card:hover, .card:focus-visible{background:rgba(43,93,63,0.05);}
+  .card-top{
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+    font-size:13px;
+    color:var(--ink-soft);
+    margin-bottom:4px;
+  }
+  .card-title{
+    font-family:'Georgia',serif;
+    font-style:italic;
+    font-size:17px;
+  }
+  .card-desc{
+    font-size:13.5px;
+    color:var(--ink-soft);
+    margin-top:4px;
+  }
+  .view-all{
+    display:inline-block;
+    margin-top:14px;
+    font-size:13px;
+    color:var(--lab);
+    text-decoration:none;
+  }
+  .view-all:hover, .view-all:focus-visible{text-decoration:underline;}
+  .links-grid{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px 22px;
+    font-size:14px;
+  }
+  .links-grid a{
+    color:var(--ink);
+    text-decoration:none;
+    border-bottom:1px dashed var(--rule);
+  }
+  .links-grid a:hover, .links-grid a:focus-visible{border-bottom-color:var(--ink);}
+  footer{
+    margin-top:64px;
+    padding-top:18px;
+    border-top:1px solid var(--rule);
+    font-size:12px;
+    color:var(--ink-soft);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--lab);
+    outline-offset:2px;
+  }
+  ::selection{background:var(--lab); color:var(--paper);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="topnav" aria-label="Primary">
+    <a href="index.html" aria-current="page">~/home</a>
+    <a href="case-studies.html">~/case-studies</a>
+    <a href="blog.html">~/blog</a>
+  </nav>
+
+  <header>
+    <div class="logo-row">
+      <div class="cursor-box" aria-hidden="true">_<span class="cursor">|</span></div>
+      <div>
+        <h1>jas<span class="heart">.</span> exe</h1>
+        <p class="tagline">ml &amp; data — currently overfitting to side projects</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="stamp">
+    <b>status:</b> open to ml / data / research roles &middot;
+    <b>based in:</b> Delhi, IN &middot;
+    <b>last deployed model that didn't blow up prod:</b> 6 days ago
+  </div>
+
+  <section aria-label="About">
+    <p class="bio-line"><span class="prompt">$</span> i train models, break pipelines, and occasionally fix them before anyone notices</p>
+    <p class="bio-line"><span class="prompt">$</span> [placeholder] studying / working on — replace with real role, school, or focus</p>
+    <p class="bio-line"><span class="prompt">$</span> always down to talk about messy data, weird eval metrics, or why your model is lying to you</p>
+
+    <blockquote>
+      replace this with a real one-liner — a belief, a running joke, a thing you say in every interview
+    </blockquote>
+
+    <a class="listen" href="#" target="_blank" rel="noopener">[placeholder: link to a playlist / reading list / something human]</a>
+
+    <div class="taglist">
+      <span class="tag lab">interest: pytorch internals</span>
+      <span class="tag lab">interest: weird datasets</span>
+      <span class="tag lab">interest: [add yours]</span>
+      <span class="tag hate">pure hate: leaderboard chasing</span>
+      <span class="tag hate">pure hate: "AI-powered" everything</span>
+      <span class="tag hate">pure hate: [add yours]</span>
+    </div>
+  </section>
+
+  <h2 class="section-label">case studies</h2>
+  <div class="card-list">
+    <a class="card" href="case-studies.html#cs-1">
+      <div class="card-top"><span>case study 01</span><span>placeholder · ML</span></div>
+      <div class="card-title">Title of project one — replace me</div>
+      <div class="card-desc">One-line placeholder description of the problem and what you built.</div>
+    </a>
+    <a class="card" href="case-studies.html#cs-2">
+      <div class="card-top"><span>case study 02</span><span>placeholder · Data</span></div>
+      <div class="card-title">Title of project two — replace me</div>
+      <div class="card-desc">One-line placeholder description of the problem and what you built.</div>
+    </a>
+    <a class="card" href="case-studies.html#cs-3">
+      <div class="card-top"><span>case study 03</span><span>placeholder · Research</span></div>
+      <div class="card-title">Title of project three — replace me</div>
+      <div class="card-desc">One-line placeholder description of the problem and what you built.</div>
+    </a>
+  </div>
+  <a class="view-all" href="case-studies.html">view all case studies →</a>
+
+  <h2 class="section-label">latest from the blog</h2>
+  <div class="card-list">
+    <a class="card" href="blog.html#post-1">
+      <div class="card-top"><span>placeholder date</span><span>5 min read</span></div>
+      <div class="card-title">Placeholder post title — replace me</div>
+      <div class="card-desc">One-line summary of what this post is actually about.</div>
+    </a>
+    <a class="card" href="blog.html#post-2">
+      <div class="card-top"><span>placeholder date</span><span>3 min read</span></div>
+      <div class="card-title">Another placeholder post title</div>
+      <div class="card-desc">One-line summary of what this post is actually about.</div>
+    </a>
+  </div>
+  <a class="view-all" href="blog.html">view all posts →</a>
+
+  <h2 class="section-label">find me</h2>
+  <div class="links-grid">
+    <a href="#" target="_blank" rel="noopener">github →</a>
+    <a href="#" target="_blank" rel="noopener">linkedin →</a>
+    <a href="#" target="_blank" rel="noopener">twitter/x →</a>
+    <a href="mailto:you@example.com">email →</a>
+    <a href="#" target="_blank" rel="noopener">resume (pdf) →</a>
+  </div>
+
+  <footer>
+    <span>built by hand, not by template</span>
+    <span>© 2026</span>
+  </footer>
+
+</div>
+</body>
+</html>

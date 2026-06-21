@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jas. /case-studies</title>
+<meta name="description" content="case studies — ml and data projects, written up properly.">
+<style>
+  :root{
+    --paper:#F7F5F0;
+    --ink:#161412;
+    --ink-soft:#4a463f;
+    --rule:#d8d3c6;
+    --lab:#2B5D3F;
+    --hate:#8B2E2E;
+    --measure:680px;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-font-smoothing:antialiased;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'JetBrains Mono','SF Mono',Consolas,monospace;
+    font-size:15px;
+    line-height:1.65;
+    padding:64px 24px 120px;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:.001ms !important; transition-duration:.001ms !important;}
+  }
+  .wrap{max-width:var(--measure); margin:0 auto;}
+  .topnav{display:flex; gap:18px; margin-bottom:48px; font-size:13px;}
+  .topnav a{color:var(--ink-soft); text-decoration:none; border-bottom:1px dashed var(--rule); padding-bottom:2px;}
+  .topnav a:hover, .topnav a:focus-visible{color:var(--lab); border-bottom-color:var(--lab);}
+  .topnav a[aria-current="page"]{color:var(--ink); border-bottom:1px solid var(--ink);}
+
+  h1{
+    font-family:'Georgia',serif;
+    font-style:italic;
+    font-size:28px;
+    margin:0 0 6px;
+  }
+  .page-sub{
+    color:var(--ink-soft);
+    font-size:13px;
+    margin:0 0 40px;
+  }
+
+  .filterbar{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:36px;
+    font-size:12.5px;
+  }
+  .filterbar span{
+    border:1px solid var(--rule);
+    padding:5px 10px;
+    border-radius:2px;
+    color:var(--ink-soft);
+  }
+  .filterbar span.active{border-color:var(--lab); color:var(--lab);}
+
+  .study{
+    border-top:1px solid var(--rule);
+    padding:30px 0;
+    scroll-margin-top:24px;
+  }
+  .study:last-child{border-bottom:1px solid var(--rule);}
+  .study-meta{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+    font-size:12.5px;
+    color:var(--ink-soft);
+    margin-bottom:10px;
+  }
+  .study-meta .num{color:var(--lab); font-weight:600;}
+  .study h2{
+    font-family:'Georgia',serif;
+    font-style:italic;
+    font-size:21px;
+    margin:0 0 10px;
+  }
+  .study p{margin:0 0 12px; color:var(--ink-soft); font-size:14px;}
+  .stack{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin:14px 0 16px;
+  }
+  .stack span{
+    font-size:12px;
+    border:1px solid var(--rule);
+    padding:3px 8px;
+    border-radius:2px;
+  }
+  .result-box{
+    border-left:2px solid var(--lab);
+    padding:10px 14px;
+    margin:14px 0;
+    font-size:13.5px;
+    background:rgba(43,93,63,0.04);
+  }
+  .result-box b{color:var(--ink);}
+  .study-links{
+    display:flex;
+    gap:16px;
+    font-size:13px;
+    margin-top:10px;
+  }
+  .study-links a{
+    color:var(--ink);
+    text-decoration:none;
+    border-bottom:1px solid var(--ink);
+  }
+  .study-links a:hover, .study-links a:focus-visible{color:var(--lab); border-color:var(--lab);}
+
+  footer{
+    margin-top:64px;
+    padding-top:18px;
+    border-top:1px solid var(--rule);
+    font-size:12px;
+    color:var(--ink-soft);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+  a:focus-visible, button:focus-visible{outline:2px solid var(--lab); outline-offset:2px;}
+  ::selection{background:var(--lab); color:var(--paper);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="topnav" aria-label="Primary">
+    <a href="index.html">~/home</a>
+    <a href="case-studies.html" aria-current="page">~/case-studies</a>
+    <a href="blog.html">~/blog</a>
+  </nav>
+
+  <h1>case studies</h1>
+  <p class="page-sub">$ ls ./projects --sorted-by=actually-finished</p>
+
+  <div class="filterbar" aria-hidden="true">
+    <span class="active">all</span>
+    <span>ml</span>
+    <span>data eng</span>
+    <span>research</span>
+  </div>
+
+  <div class="study" id="cs-1">
+    <div class="study-meta"><span class="num">01</span><span>placeholder · ML</span><span>placeholder timeframe</span></div>
+    <h2>Title of project one — replace me</h2>
+    <p><b style="color:var(--ink)">the problem:</b> placeholder — what was broken, slow, or missing before this existed.</p>
+    <p><b style="color:var(--ink)">what i built:</b> placeholder — the approach, the model, the pipeline, in plain language.</p>
+    <div class="stack">
+      <span>PyTorch</span><span>placeholder</span><span>placeholder</span>
+    </div>
+    <div class="result-box">
+      <b>result:</b> placeholder metric — e.g. "cut inference latency from Xms to Yms" or "improved F1 from 0.X to 0.Y on Z dataset"
+    </div>
+    <div class="study-links">
+      <a href="#" target="_blank" rel="noopener">read full case study →</a>
+      <a href="#" target="_blank" rel="noopener">github →</a>
+    </div>
+  </div>
+
+  <div class="study" id="cs-2">
+    <div class="study-meta"><span class="num">02</span><span>placeholder · Data Eng</span><span>placeholder timeframe</span></div>
+    <h2>Title of project two — replace me</h2>
+    <p><b style="color:var(--ink)">the problem:</b> placeholder.</p>
+    <p><b style="color:var(--ink)">what i built:</b> placeholder.</p>
+    <div class="stack"><span>placeholder</span><span>placeholder</span></div>
+    <div class="result-box"><b>result:</b> placeholder metric.</div>
+    <div class="study-links">
+      <a href="#" target="_blank" rel="noopener">read full case study →</a>
+      <a href="#" target="_blank" rel="noopener">github →</a>
+    </div>
+  </div>
+
+  <div class="study" id="cs-3">
+    <div class="study-meta"><span class="num">03</span><span>placeholder · Research</span><span>placeholder timeframe</span></div>
+    <h2>Title of project three — replace me</h2>
+    <p><b style="color:var(--ink)">the problem:</b> placeholder.</p>
+    <p><b style="color:var(--ink)">what i built:</b> placeholder.</p>
+    <div class="stack"><span>placeholder</span><span>placeholder</span></div>
+    <div class="result-box"><b>result:</b> placeholder metric.</div>
+    <div class="study-links">
+      <a href="#" target="_blank" rel="noopener">read full case study →</a>
+      <a href="#" target="_blank" rel="noopener">github →</a>
+    </div>
+  </div>
+
+  <div class="study" id="cs-4">
+    <div class="study-meta"><span class="num">04</span><span>placeholder</span><span>placeholder timeframe</span></div>
+    <h2>Title of project four — replace me</h2>
+    <p><b style="color:var(--ink)">the problem:</b> placeholder.</p>
+    <p><b style="color:var(--ink)">what i built:</b> placeholder.</p>
+    <div class="stack"><span>placeholder</span><span>placeholder</span></div>
+    <div class="result-box"><b>result:</b> placeholder metric.</div>
+    <div class="study-links">
+      <a href="#" target="_blank" rel="noopener">read full case study →</a>
+      <a href="#" target="_blank" rel="noopener">github →</a>
+    </div>
+  </div>
+
+  <div class="study" id="cs-5">
+    <div class="study-meta"><span class="num">05</span><span>placeholder</span><span>placeholder timeframe</span></div>
+    <h2>Title of project five — replace me</h2>
+    <p><b style="color:var(--ink)">the problem:</b> placeholder.</p>
+    <p><b style="color:var(--ink)">what i built:</b> placeholder.</p>
+    <div class="stack"><span>placeholder</span><span>placeholder</span></div>
+    <div class="result-box"><b>result:</b> placeholder metric.</div>
+    <div class="study-links">
+      <a href="#" target="_blank" rel="noopener">read full case study →</a>
+      <a href="#" target="_blank" rel="noopener">github →</a>
+    </div>
+  </div>
+
+  <footer>
+    <span>built by hand, not by template</span>
+    <span>© 2026</span>
+  </footer>
+
+</div>
+</body>
+</html>

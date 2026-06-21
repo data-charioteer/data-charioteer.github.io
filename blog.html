@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jas. /blog</title>
+<meta name="description" content="notes on ml, data, and things that broke along the way.">
+<style>
+  :root{
+    --paper:#F7F5F0;
+    --ink:#161412;
+    --ink-soft:#4a463f;
+    --rule:#d8d3c6;
+    --lab:#2B5D3F;
+    --hate:#8B2E2E;
+    --measure:640px;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-font-smoothing:antialiased;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'JetBrains Mono','SF Mono',Consolas,monospace;
+    font-size:15px;
+    line-height:1.65;
+    padding:64px 24px 120px;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:.001ms !important; transition-duration:.001ms !important;}
+  }
+  .wrap{max-width:var(--measure); margin:0 auto;}
+  .topnav{display:flex; gap:18px; margin-bottom:48px; font-size:13px;}
+  .topnav a{color:var(--ink-soft); text-decoration:none; border-bottom:1px dashed var(--rule); padding-bottom:2px;}
+  .topnav a:hover, .topnav a:focus-visible{color:var(--lab); border-bottom-color:var(--lab);}
+  .topnav a[aria-current="page"]{color:var(--ink); border-bottom:1px solid var(--ink);}
+
+  h1{
+    font-family:'Georgia',serif;
+    font-style:italic;
+    font-size:28px;
+    margin:0 0 6px;
+  }
+  .page-sub{
+    color:var(--ink-soft);
+    font-size:13px;
+    margin:0 0 12px;
+  }
+  .archive-note{
+    font-size:12.5px;
+    color:var(--ink-soft);
+    margin:0 0 40px;
+  }
+  .archive-note a{color:var(--lab); text-decoration:none; border-bottom:1px dashed var(--lab);}
+
+  .year-label{
+    font-size:12px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin:36px 0 12px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .year-label::after{content:''; flex:1; height:1px; background:var(--rule);}
+
+  .post{
+    display:block;
+    padding:18px 4px;
+    border-bottom:1px solid var(--rule);
+    text-decoration:none;
+    color:var(--ink);
+    scroll-margin-top:24px;
+  }
+  .post:first-of-type{border-top:1px solid var(--rule);}
+  .post:hover, .post:focus-visible{background:rgba(43,93,63,0.05);}
+  .post-top{
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+    font-size:12.5px;
+    color:var(--ink-soft);
+    margin-bottom:5px;
+  }
+  .post-title{
+    font-family:'Georgia',serif;
+    font-style:italic;
+    font-size:18px;
+  }
+  .post-desc{
+    font-size:13.5px;
+    color:var(--ink-soft);
+    margin-top:5px;
+  }
+  .post-tags{
+    margin-top:8px;
+    display:flex;
+    gap:6px;
+  }
+  .post-tags span{
+    font-size:11px;
+    color:var(--lab);
+    border:1px solid var(--lab);
+    padding:2px 7px;
+    border-radius:2px;
+  }
+
+  footer{
+    margin-top:64px;
+    padding-top:18px;
+    border-top:1px solid var(--rule);
+    font-size:12px;
+    color:var(--ink-soft);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+  a:focus-visible, button:focus-visible{outline:2px solid var(--lab); outline-offset:2px;}
+  ::selection{background:var(--lab); color:var(--paper);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="topnav" aria-label="Primary">
+    <a href="index.html">~/home</a>
+    <a href="case-studies.html">~/case-studies</a>
+    <a href="blog.html" aria-current="page">~/blog</a>
+  </nav>
+
+  <h1>blog</h1>
+  <p class="page-sub">$ tail -f ./thoughts.log</p>
+  <p class="archive-note">unfiltered notes, not polished case studies — those live <a href="case-studies.html">here</a>.</p>
+
+  <div class="year-label">2026</div>
+
+  <a class="post" href="#" id="post-1">
+    <div class="post-top"><span>placeholder date</span><span>5 min read</span></div>
+    <div class="post-title">Placeholder post title — replace me</div>
+    <div class="post-desc">One-line summary of what this post is actually about.</div>
+    <div class="post-tags"><span>ml</span><span>notes</span></div>
+  </a>
+
+  <a class="post" href="#" id="post-2">
+    <div class="post-top"><span>placeholder date</span><span>3 min read</span></div>
+    <div class="post-title">Another placeholder post title</div>
+    <div class="post-desc">One-line summary of what this post is actually about.</div>
+    <div class="post-tags"><span>data</span></div>
+  </a>
+
+  <a class="post" href="#" id="post-3">
+    <div class="post-top"><span>placeholder date</span><span>8 min read</span></div>
+    <div class="post-title">A third placeholder post title</div>
+    <div class="post-desc">One-line summary of what this post is actually about.</div>
+    <div class="post-tags"><span>research</span><span>rant</span></div>
+  </a>
+
+  <div class="year-label">2025</div>
+
+  <a class="post" href="#" id="post-4">
+    <div class="post-top"><span>placeholder date</span><span>4 min read</span></div>
+    <div class="post-title">An older placeholder post title</div>
+    <div class="post-desc">One-line summary of what this post is actually about.</div>
+    <div class="post-tags"><span>ml</span></div>
+  </a>
+
+  <footer>
+    <span>built by hand, not by template</span>
+    <span>© 2026</span>
+  </footer>
+
+</div>
+</body>
+</html>
